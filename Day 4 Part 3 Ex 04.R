@@ -1,0 +1,8 @@
+data(airquality)
+summary(airquality)
+library(reshape2)
+melt(airquality)
+melt(airquality, id.vars = c("Month", "Day"))
+dcast(melt(airquality, id.vars = c("Month", "Day")), Month + Day ~ variable)
+library(reshape)
+cast(airquality, Month ~ ., mean, subset = select(airquality, Ozone, Solar.R, Wind, Temp))

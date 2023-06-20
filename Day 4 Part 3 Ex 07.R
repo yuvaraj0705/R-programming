@@ -1,0 +1,5 @@
+data(ChickWeight)
+boxplot(weight ~ Diet, data = ChickWeight, main = "Weight by Diet", xlab = "Diet", ylab = "Weight")
+hist(ChickWeight[ChickWeight$Diet == 1, "weight"], main = "Weight Distribution for Diet-1", xlab = "Weight")
+library(ggplot2)
+ggplot(ChickWeight, aes(x = Time, y = weight, color = factor(Diet))) + geom_point() + labs(title = "Weight vs Time by Diet")

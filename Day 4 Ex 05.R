@@ -1,0 +1,5 @@
+data(mtcars)
+model <- glm(am ~ hp + wt + cyl, data = mtcars, family = "binomial")
+summary(model)
+newdata <- data.frame(hp = 200, wt = 3.5, cyl = 8)
+predict(model, newdata, type = "response")
